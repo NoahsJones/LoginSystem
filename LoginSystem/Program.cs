@@ -52,9 +52,19 @@
                 {
                     string username = userCredentials[0];
                     string password = userCredentials[1];
-
-                    LoginIn(username, password);
-                    KeepLoggingIn = false;
+                    while (KeepLoggingIn)
+                    {
+                        Console.Write("Please input your username: ");
+                        if (username == Console.ReadLine())
+                        {
+                            Console.Write("Please input your password: ");
+                            if (password == Console.ReadLine())
+                            {
+                                LoginIn(username, password);
+                                KeepLoggingIn = false;
+                            }
+                        }
+                    }
                 }
             }
         }
